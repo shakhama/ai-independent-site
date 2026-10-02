@@ -1,0 +1,63 @@
+/* ============================================================
+ * FiguRise - RTL 适配（阿拉伯语）
+ * 通过 html[dir="rtl"] 自动生效
+ * ============================================================ */
+html[dir="rtl"] body {
+  font-family: "Outfit", "Noto Kufi Arabic", "Noto Sans Arabic", "Noto Sans SC", system-ui, sans-serif;
+}
+
+/* 语言菜单右对齐改为左对齐 */
+html[dir="rtl"] .lang-menu { right: auto; left: 0; }
+
+/* 流程箭头翻转 */
+html[dir="rtl"] .step-arrow { right: auto; left: -13px; transform: translateY(-50%) scaleX(-1); }
+
+/* 阅读更多箭头翻转 */
+html[dir="rtl"] .article-body a svg { transform: scaleX(-1); }
+html[dir="rtl"] .article-body a:hover svg { transform: translateX(-4px) scaleX(-1); }
+
+/* 搜索图标位置 */
+html[dir="rtl"] .search-box svg { left: auto; right: 14px; }
+html[dir="rtl"] .search-box input { padding: 11px 42px 11px 16px; }
+
+/* 下拉箭头位置 */
+html[dir="rtl"] .field select { background-position: left 14px center; padding-right: 16px; padding-left: 40px; }
+
+/* 时间线 */
+html[dir="rtl"] .timeline { padding-inline-start: 0; padding-inline-end: 26px; }
+html[dir="rtl"] .timeline::before { left: auto; right: 7px; }
+html[dir="rtl"] .tl-item::before { left: auto; right: -25px; }
+
+/* 浮动卡片 */
+html[dir="rtl"] .story-float-card { inset-inline-start: auto; }
+
+/* 徽章 */
+html[dir="rtl"] .eyebrow::before { display: none; }
+html[dir="rtl"] .eyebrow { flex-direction: row-reverse; }
+html[dir="rtl"] .sec-head.center .eyebrow::after { display: none; }
+
+/* 列表圆点间距镜像（已用 gap 自动处理，保持无额外规则） */
+
+/* 机器人面板从左侧弹出，避免遮挡内容 */
+html[dir="rtl"] .bot-fab { right: auto; left: 22px; }
+html[dir="rtl"] .bot-panel { right: auto; left: 22px; transform-origin: bottom left; }
+html[dir="rtl"] .bot-msg.bot { border-bottom-left-radius: 16px; border-bottom-right-radius: 5px; }
+html[dir="rtl"] .bot-msg.user { border-bottom-right-radius: 16px; border-bottom-left-radius: 5px; }
+html[dir="rtl"] .bot-chip:hover { transform: translateX(-3px); }
+
+/* 弹窗关闭按钮 */
+html[dir="rtl"] .modal-close { right: auto; left: 14px; }
+
+/* 数字/拉丁内容保持 LTR 方向，避免日期/邮箱错乱 */
+html[dir="rtl"] .stat-num, html[dir="rtl"] .badge-num, html[dir="rtl"] .tl-item b,
+html[dir="rtl"] .cert-badge, html[dir="rtl"] .product-spec span, html[dir="rtl"] .step::before {
+  direction: ltr; unicode-bidi: isolate;
+}
+
+/* 邮箱/电话行 */
+html[dir="rtl"] .info-row a, html[dir="rtl"] .footer-contact li {
+  direction: ltr; unicode-bidi: embed; text-align: right;
+}
+
+/* 导航链接顺序反转（视觉右侧为首页） */
+html[dir="rtl"] .nav-links { flex-direction: row-reverse; }
